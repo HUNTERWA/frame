@@ -83,75 +83,16 @@ public class MainActivity extends AppCompatActivity
                 startActivity(i);
             }
         });
-
-        /*image=findViewById(R.id.image);
-        view=findViewById(R.id.view);
-
-        image.animate().translationY(-1000).setDuration(0);
-        view.animate().translationY(-1000).setDuration(0);
-
-        Thread thread=new Thread()
-        {
-            public void run()
-            {
-                try
-                {
-                    sleep(0);
-                }
-                catch (InterruptedException e)
-                {
-                    e.printStackTrace();
-                }
-                finally
-                {
-                    imganimate();
-                }
-            }
-        };
-        thread.start();
-
-        imganimate();*/
-
-
-
-    /*public void imganimate()
-    {
-        image.animate().translationY(0).setDuration(500);
-        view.animate().translationY(0).setDuration(500);
-    }*/
-
-
     }
 
-    /*public boolean onKeyDown(int keycode, KeyEvent keyEvent)
-    {
-        if(keycode==KeyEvent.KEYCODE_BACK)
-        {
-            event();
-            return true;
-        }
-            return super.onKeyDown(keycode,keyEvent);
 
-    }*/
 
     @Override
     public void onBackPressed()
     {
-        event();
-    }
-
-     public void event()
-     {
         AlertDialog.Builder aDB=new AlertDialog.Builder(this);
-        aDB.setMessage("Do you really want to exit?");
-        aDB.setNegativeButton("no", new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-
-            }
-        });
+        aDB.setMessage("Do you really want to exit ?");
+        aDB.setNegativeButton("no",null);
         aDB.setPositiveButton("yes", new DialogInterface.OnClickListener()
         {
             @Override
@@ -161,7 +102,9 @@ public class MainActivity extends AppCompatActivity
             }
         });
         aDB.show();
-     }
+    }
+
+
     public void nextActivity(View view)
     {
         Intent intent=new Intent(MainActivity.this,CustomClass.class);

@@ -13,26 +13,28 @@
         android:id="@+id/frame1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:background="@drawable/gradien"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
+            android:layout_marginTop="50dp"
+            style="@style/Widget.Support.CoordinatorLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="I am first Activity"
-            style="@style/Widget.Support.CoordinatorLayout"
             android:layout_margin="5dp"
-            android:textSize="19dp"/>
+            android:text="I am first Activity"
+            android:textSize="19dp" />
 
-        <Button
-            android:textColor="#ffffff"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple"
-            android:text="next activity"
-            android:layout_margin="3dp"
-            android:onClick="nextFrame"/>
+        <ImageView
+            android:layout_marginTop="300dp"
+            android:layout_gravity="bottom|right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
+            android:onClick="forward"/>
+
+
 
     </LinearLayout>
 
@@ -51,6 +53,14 @@
             android:layout_height="wrap_content"
             android:text="Curent Activity"
             style="@style/Widget.Compat.NotificationActionContainer"/>
+
+        <ImageView
+            android:layout_marginTop="300dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:onClick="goBack"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
     </LinearLayout>
 

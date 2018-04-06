@@ -1,5 +1,6 @@
 package com.example.rohit.paypal;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,23 +21,42 @@ public class CustomClass extends AppCompatActivity
         frame2=findViewById(R.id.frame2);
     }
 
-    public void nextFrame(View view)
+    public void forward(View view)
     {
+        //lies in first frame
+        frame1.setVisibility(View.GONE);
         frame2.setVisibility(View.VISIBLE);
+
     }
 
-    @Override
+    public void goBack(View view)
+    {
+        frame2.setVisibility(View.GONE);
+        frame1.setVisibility(View.VISIBLE);
+    }
+
+
+
+
+
+    /*@Override
     public void onBackPressed()
     {
         if(frame2.getVisibility()==View.VISIBLE)
         {//on back press directly previous activity was showing instead of showing previous frame. that's y this method needed
             frame2.setVisibility(View.GONE);
             frame1.setVisibility(View.VISIBLE);
+            //super.finish();  //makes 1st frame disappear
         }
         else if(frame1.getVisibility()==View.VISIBLE)
         {//on back press above if condition was overlapping that's why we needed this condition.
             Intent intent=new Intent(CustomClass.this,MainActivity.class);
             startActivity(intent);
+            //super.finish(); //failure trial
         }
-    }
+        else
+        {
+            finish();  //failure trial
+        }
+    }*/
 }
